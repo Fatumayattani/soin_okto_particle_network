@@ -14,7 +14,7 @@ export default function HomePage() {
           Your Safe Space for
           <span className="text-pink-600"> Mental Wellness</span>
         </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
           Join our supportive community of women empowering each other through mental health awareness, emotional support, and personal growth.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
