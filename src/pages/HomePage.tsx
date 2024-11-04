@@ -4,7 +4,11 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-pink-50 to-white px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-pink-50 to-white px-4 sm:px-6 lg:px-8"
+    style={{
+      backgroundImage: 'url(https://images.unsplash.com/photo-1591135108731-615592cf231b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'
+    }}
+    >
       <div className="text-center max-w-7xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
           Your Safe Space for
