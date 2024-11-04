@@ -30,6 +30,13 @@ export default function SupportGroupsPage() {
       description: "Discuss career challenges and work-life balance strategies.",
       category: "Professional"
     }
+    {
+      id: 5,
+      name: "Single Moms Support",
+      members: 295,
+      description: "A space for single mothers to connect, share resources, and support each other.",
+      category: "Parenting"
+    }
   ];
 
   return (
