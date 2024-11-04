@@ -30,6 +30,13 @@ export default function ResourcesPage() {
       description: "Strategies to maximize productivity and manage family time effectively.",
       icon: Clock
     }
+    {
+      id: 9,
+      title: "Emotional Well-being Journal",
+      type: "Journal",
+      description: "Daily prompts to reflect on emotional well-being and mental health.",
+      icon: PenTool
+    }
   ];
 
   return (
