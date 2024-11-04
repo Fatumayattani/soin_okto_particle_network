@@ -36,7 +36,7 @@ export default function ResourcesPage() {
       type: "Journal",
       description: "Daily prompts to reflect on emotional well-being and mental health.",
       icon: PenTool
-    }
+    },
     {
       id: 6,
       title: "Healthy Eating on a Budget",
