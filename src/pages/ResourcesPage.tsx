@@ -43,7 +43,7 @@ export default function ResourcesPage() {
       type: "Article",
       description: "Tips and recipes for maintaining a nutritious diet without overspending.",
       icon: ShoppingCart
-    },
+    }
   ];
 
   return (
