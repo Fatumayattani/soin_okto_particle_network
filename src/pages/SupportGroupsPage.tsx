@@ -29,7 +29,7 @@ export default function SupportGroupsPage() {
       members: 189,
       description: "Discuss career challenges and work-life balance strategies.",
       category: "Professional"
-    }
+    },
     {
       id: 5,
       name: "Single Moms Support",
