@@ -12,7 +12,7 @@ export default function HomePage() {
       <div className="text-center max-w-7xl">
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
           Empowering Women's 
-          <span className="text-black"> Health & Wellness</span>
+          <span className="text-purple-700"> Health & Wellness</span>
 </h1>
 <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
           Join a vibrant community of women dedicated to uplifting each other through health education, emotional support, and shared wellness journeys.
