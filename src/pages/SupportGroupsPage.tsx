@@ -24,7 +24,7 @@ export default function SupportGroupsPage() {
       category: "Professional"
     },
     {
-      id: 7,
+      id: 4,
       name: "Young Women Entrepreneurs Network",
       members: 412,
       description: "Connect with other young women entrepreneurs to share resources and advice.",
@@ -36,6 +36,13 @@ export default function SupportGroupsPage() {
       members: 295,
       description: "A space for single mothers to connect, share resources, and support each other.",
       category: "Parenting"
+    },
+    {
+      id: 4,
+      name: "Fitness & Nutrition",
+      members: 321,
+      description: "Share tips on maintaining a healthy lifestyle through fitness and nutrition.",
+      category: "Health"
     }
   ];
 
