@@ -1,4 +1,3 @@
-import React from 'react';
 import { Users, Heart, MessageCircle } from 'lucide-react';
 
 export default function SupportGroupsPage() {

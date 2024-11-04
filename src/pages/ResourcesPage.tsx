@@ -1,4 +1,3 @@
-import React from 'react';
 import { Book, Video, FileText, Download } from 'lucide-react';
 
 export default function ResourcesPage() {

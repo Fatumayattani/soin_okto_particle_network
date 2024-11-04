@@ -1,4 +1,3 @@
-import React from 'react';
 import { Check, Wallet } from 'lucide-react';
 
 export default function PricingPage() {
