@@ -10,7 +10,7 @@ export default function HomePage() {
     }}
     >
       <div className="text-center max-w-7xl">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
           Your Safe Space for
           <span className="text-pink-600"> Mental Wellness</span>
         </h1>
