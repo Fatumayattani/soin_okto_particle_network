@@ -1,4 +1,3 @@
-import React from 'react';
 import CommunityFeed from '../components/CommunityFeed';
 
 export default function CommunityPage() {
