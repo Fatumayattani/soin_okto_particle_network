@@ -10,13 +10,13 @@ export default function HomePage() {
     }}
     >
       <div className="text-center max-w-7xl">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-          Your Safe Space for
-          <span className="text-pink-800"> Mental Wellness</span>
-        </h1>
-        <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-          Join our supportive community of women empowering each other through mental health awareness, emotional support, and personal growth.
-        </p>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+          Empowering Women's 
+          <span className="text-pink-800"> Health & Wellness</span>
+</h1>
+<p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+          Join a vibrant community of women dedicated to uplifting each other through health education, emotional support, and shared wellness journeys.
+</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <button 
             onClick={() => navigate('/community')}
