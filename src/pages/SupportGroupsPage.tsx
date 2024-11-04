@@ -40,7 +40,7 @@ export default function SupportGroupsPage() {
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-pink-600 mb-8 text-center">Support Groups</h1>
+        <h1 className="text-4xl font-bold text-white mb-8 text-center">Support Groups</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {groups.map(group => (
             <div key={group.id} className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
