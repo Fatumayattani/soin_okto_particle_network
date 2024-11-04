@@ -12,7 +12,7 @@ export default function HomePage() {
       <div className="text-center max-w-7xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
           Your Safe Space for
-          <span className="text-pink-600"> Mental Wellness</span>
+          <span className="text-pink-800"> Mental Wellness</span>
         </h1>
         <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
           Join our supportive community of women empowering each other through mental health awareness, emotional support, and personal growth.
