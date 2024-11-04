@@ -29,7 +29,7 @@ export default function ResourcesPage() {
       type: "Video",
       description: "Strategies to maximize productivity and manage family time effectively.",
       icon: Clock
-    }
+    },
     {
       id: 9,
       title: "Emotional Well-being Journal",
