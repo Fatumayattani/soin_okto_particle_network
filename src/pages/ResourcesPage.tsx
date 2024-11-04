@@ -1,4 +1,4 @@
-import { Book, Video, FileText, Download, Clock, PenTool } from 'lucide-react';
+import { Book, Video, FileText, Download, Clock, PenTool, ShoppingCart } from 'lucide-react';
 
 export default function ResourcesPage() {
   const resources = [
