@@ -4,9 +4,9 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-pink-50 to-white min-h-screen">
-      <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 mp-7">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-pink-50 to-white px-4 sm:px-6 lg:px-8">
+      <div className="text-center max-w-7xl">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
           Your Safe Space for
           <span className="text-pink-600"> Mental Wellness</span>
         </h1>
