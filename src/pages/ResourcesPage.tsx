@@ -26,7 +26,12 @@ export default function ResourcesPage() {
   ];
 
   return (
-    <div className="pt-24 px-4 sm:px-6 lg:px-8 min-h-screen">
+    <div 
+      className="pt-24 px-4 sm:px-6 lg:px-8 min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: 'url(https://images.unsplash.com/photo-1591135108731-615592cf231b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">Resources</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
