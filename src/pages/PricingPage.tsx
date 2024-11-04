@@ -52,7 +52,7 @@ export default function PricingPage() {
           <h1 className="text-4xl font-bold text-white mb-4">
             Invest in Your Mental Wellness
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-white max-w-2xl mx-auto">
             Choose the plan that best fits your journey. Connect your wallet to get started.
           </p>
         </div>
