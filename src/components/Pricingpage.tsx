@@ -44,12 +44,12 @@ export default function PricingPage() {
     <div className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-rose-50 to-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Invest in Your Mental Wellness
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Choose the plan that best fits your journey. Connect your wallet to get started.
-          </p>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Invest in Your Health & Empowerment
+</h1>
+<p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Choose a plan that supports your wellness goals. Connect your wallet to begin your journey.
+</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
