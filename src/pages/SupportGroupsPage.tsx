@@ -24,10 +24,10 @@ export default function SupportGroupsPage() {
       category: "Professional"
     },
     {
-      id: 4,
-      name: "Career Growth & Balance",
-      members: 189,
-      description: "Discuss career challenges and work-life balance strategies.",
+      id: 7,
+      name: "Young Women Entrepreneurs Network",
+      members: 412,
+      description: "Connect with other young women entrepreneurs to share resources and advice.",
       category: "Professional"
     },
     {
