@@ -23,6 +23,13 @@ export default function ResourcesPage() {
       description: "Interactive exercises to develop your personal self-care routine.",
       icon: FileText
     }
+    {
+      id: 8,
+      title: "Time Management for Busy Moms",
+      type: "Video",
+      description: "Strategies to maximize productivity and manage family time effectively.",
+      icon: Clock
+    }
   ];
 
   return (
