@@ -22,7 +22,7 @@ export default function ResourcesPage() {
       type: "Workbook",
       description: "Interactive exercises to develop your personal self-care routine.",
       icon: FileText
-    }
+    },
     {
       id: 8,
       title: "Time Management for Busy Moms",
