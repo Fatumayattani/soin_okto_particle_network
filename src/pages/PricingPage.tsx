@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { Check, Wallet } from 'lucide-react';
+import { walletEntryPlugin, EntryPosition } from '@particle-network/wallet';
 
 export default function PricingPage() {
   const plans = [
@@ -10,8 +12,8 @@ export default function PricingPage() {
         'Access to Community Forums',
         'Basic AI Chat Support',
         'Public Support Groups',
-        'Resource Library Access'
-      ]
+        'Resource Library Access',
+      ],
     },
     {
       name: 'Premium',
@@ -22,8 +24,8 @@ export default function PricingPage() {
         'Priority AI Support',
         'Private Support Groups',
         'Personalized Wellness Plan',
-        'Monthly Virtual Events'
-      ]
+        'Monthly Virtual Events',
+      ],
     },
     {
       name: 'Ultimate',
@@ -35,16 +37,46 @@ export default function PricingPage() {
         '1-on-1 Mentoring Sessions',
         'Exclusive Workshops',
         'Custom Resource Library',
-        'Community Leadership Access'
-      ]
-    }
+        'Community Leadership Access',
+      ],
+    },
   ];
 
+  useEffect(() => {
+    // Initialize the Particle Wallet
+    walletEntryPlugin.init(
+      {
+        projectId: process.env.REACT_APP_PROJECT_ID!,
+        clientKey: process.env.REACT_APP_CLIENT_KEY!,
+        appId: process.env.REACT_APP_APP_ID!,
+      },
+      {
+        entryPosition: EntryPosition.BR, // Bottom Right
+        visible: true,
+        preload: true,
+        themeType: 'light', // Optional: 'light' or 'dark'
+      }
+    );
+
+    // Set wallet provider (add this if you have a provider setup)
+    // walletEntryPlugin.setWalletCore({
+    //   ethereum: window.ethereum, // For Ethereum
+    //   // Or for Solana
+    //   // solana: window.phantom.solana,
+    // });
+  }, []);
+
+  // Function to open wallet
+  const connectWallet = () => {
+    walletEntryPlugin.walletEntryCreate();
+  };
+
   return (
-    <div 
+    <div
       className="pt-24 px-4 sm:px-6 lg:px-8 min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1591135108731-615592cf231b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'
+        backgroundImage:
+          'url(https://images.unsplash.com/photo-1591135108731-615592cf231b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
       }}
     >
       <div className="max-w-7xl mx-auto">
@@ -71,7 +103,10 @@ export default function PricingPage() {
                   {plan.price}
                 </div>
                 <p className="text-gray-600 mb-6">{plan.description}</p>
-                <button className="w-full flex items-center justify-center space-x-2 bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors">
+                <button
+                  onClick={connectWallet} // Call connectWallet on button click
+                  className="w-full flex items-center justify-center space-x-2 bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors"
+                >
                   <Wallet className="h-5 w-5" />
                   <span>Connect Wallet</span>
                 </button>
