@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Heart, Wallet, LogIn } from 'lucide-react';
+import { useUser } from '../context/UserContext'; // Import the UserContext
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { user } = useUser(); // Access user data from context
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -14,7 +16,7 @@ export default function Navbar() {
     { path: '/community', label: 'Community' },
     { path: '/support-groups', label: 'Support Groups' },
     { path: '/resources', label: 'Resources' },
-    { path: '/pricing', label: 'Pricing' }
+    { path: '/pricing', label: 'Pricing' },
   ];
 
   return (
@@ -48,13 +50,17 @@ export default function Navbar() {
               <Wallet className="h-4 w-4" />
               <span>Connect Wallet</span>
             </button>
-            <button
-              onClick={() => navigate('/auth')}
-              className="flex items-center space-x-2 bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors"
-            >
-              <LogIn className="h-4 w-4" />
-              <span>Sign In</span>
-            </button>
+            {user ? ( // Check if user is logged in
+              <span className="text-pink-600">Welcome, {user.name}</span> // Display user's name
+            ) : (
+              <button
+                onClick={() => navigate('/auth')}
+                className="flex items-center space-x-2 bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors"
+              >
+                <LogIn className="h-4 w-4" />
+                <span>Sign In</span>
+              </button>
+            )}
           </div>
           <div className="md:hidden flex items-center">
             <button onClick={() => setIsOpen(!isOpen)} className="text-pink-600">
