@@ -18,9 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <UserProvider>
-        <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
           <AuthPage />
-        </div>
       </UserProvider>
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/support-groups" element={<SupportGroupsPage />} />
