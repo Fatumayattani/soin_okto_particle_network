@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
-import { Mail, Lock, User, ArrowRight } from 'lucide-react';
+import { Mail, Lock, User, ArrowRight, LogOut } from 'lucide-react';
+import { useUser } from '../context/UserContext';
 
 interface AuthFormData {
   email: string;
@@ -11,6 +12,7 @@ interface AuthFormData {
 
 export default function AuthPage() {
   const navigate = useNavigate();
+  const { user, setUser } = useUser();
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState<AuthFormData>({
     email: '',
@@ -18,24 +20,21 @@ export default function AuthPage() {
     name: '',
   });
   const [error, setError] = useState('');
-  const [userName, setUserName] = useState(''); // State to hold the user's name after login
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: async (response) => {
       try {
-        // Fetch user profile information using the access_token
         const userInfo = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
           headers: { Authorization: `Bearer ${response.access_token}` },
         });
         const userData = await userInfo.json();
 
-        console.log("User Data:", userData); // This should contain the user's name and other profile info
+        setUser({
+          name: userData.name,
+          email: userData.email,
+          picture: userData.picture,
+        });
 
-        // Set the user's name to display it in the UI
-        setUserName(userData.name);
-        setFormData({ ...formData, name: userData.name });
-
-        // Optionally navigate to another route
         navigate('/');
       } catch (err) {
         setError('Failed to authenticate with Google. Please try again.');
@@ -46,18 +45,56 @@ export default function AuthPage() {
     },
   });
 
+  const handleLogout = () => {
+    setUser(null);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
     try {
       // Here you would typically make an API call to your backend
-      console.log('Form submission:', formData);
+      setUser({
+        name: formData.name || 'User',
+        email: formData.email,
+      });
       navigate('/');
     } catch (err) {
       setError('Authentication failed. Please check your credentials.');
     }
   };
+
+  if (user) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white flex items-center justify-center px-4">
+        <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+          <div className="text-center">
+            <div className="flex flex-col items-center space-y-4">
+              {user.picture && (
+                <img
+                  src={user.picture}
+                  alt={user.name}
+                  className="w-20 h-20 rounded-full"
+                />
+              )}
+              <h2 className="text-2xl font-bold text-gray-900">
+                Welcome, {user.name}!
+              </h2>
+              <p className="text-gray-600">{user.email}</p>
+              <button
+                onClick={handleLogout}
+                className="flex items-center px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700"
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                Sign Out
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white flex items-center justify-center px-4">
@@ -153,25 +190,18 @@ export default function AuthPage() {
             </div>
           </div>
 
-          {/* If userName exists, show it instead of the Google login button */}
-          {userName ? (
-            <div className="w-full flex justify-center items-center text-gray-700 text-sm">
-              Hello, {userName}
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => handleGoogleLogin()}
-              className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
-            >
-              <img
-                src="https://www.google.com/favicon.ico"
-                alt="Google"
-                className="h-5 w-5 mr-2"
-              />
-              Continue with Google
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => handleGoogleLogin()}
+            className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+          >
+            <img
+              src="https://www.google.com/favicon.ico"
+              alt="Google"
+              className="h-5 w-5 mr-2"
+            />
+            Continue with Google
+          </button>
 
           <div className="text-center">
             <button
