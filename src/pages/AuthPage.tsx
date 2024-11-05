@@ -18,11 +18,20 @@ export default function AuthPage() {
     name: '',
   });
   const [error, setError] = useState('');
+  const [userName, setUserName] = useState<string | null>(null); // Added state to store the user's name after Google login
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: async (response) => {
       try {
-        // Here you would typically send the token to your backend
+        // Fetch user info from Google after successful login
+        const userInfo = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+          headers: { Authorization: `Bearer ${response.access_token}` },
+        });
+        const userData = await userInfo.json();
+        
+        // Set the user name in state
+        setUserName(userData.name); // Store user's name after login
+
         console.log('Google login success:', response);
         navigate('/');
       } catch (err) {
@@ -39,7 +48,6 @@ export default function AuthPage() {
     setError('');
 
     try {
-      // Here you would typically make an API call to your backend
       console.log('Form submission:', formData);
       navigate('/');
     } catch (err) {
@@ -151,7 +159,7 @@ export default function AuthPage() {
               alt="Google"
               className="h-5 w-5 mr-2"
             />
-            Continue with Google
+            {userName ? `Welcome, ${userName}` : 'Continue with Google'} {/* Display user's name if logged in */}
           </button>
 
           <div className="text-center">
