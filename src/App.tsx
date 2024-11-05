@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ChatWidget from './components/ChatWidget';
@@ -13,22 +12,23 @@ import { UserProvider } from './context/UserContext';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-rose-50">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <UserProvider>
-          <AuthPage />
+      <UserProvider> {/* Wrapping the app in UserProvider to provide context to all routes */}
+        <div className="min-h-screen bg-rose-50">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/auth" element={<AuthPage />} /> {/* Wrapping AuthPage in a Route */}
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/support-groups" element={<SupportGroupsPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+          </Routes>
+          <ChatWidget />
+        </div>
       </UserProvider>
-          <Route path="/community" element={<CommunityPage />} />
-          <Route path="/support-groups" element={<SupportGroupsPage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-        </Routes>
-        <ChatWidget />
-      </div>
     </Router>
   );
 }
 
 export default App;
+
