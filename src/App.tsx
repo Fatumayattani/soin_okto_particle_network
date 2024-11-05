@@ -8,6 +8,7 @@ import CommunityPage from './pages/CommunityPage';
 import SupportGroupsPage from './pages/SupportGroupsPage';
 import ResourcesPage from './pages/ResourcesPage';
 import PricingPage from './pages/PricingPage';
+import { UserProvider } from './context/UserContext';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <UserProvider>
           <Route path="/auth" element={<AuthPage />} />
+          </UserProvider>
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/support-groups" element={<SupportGroupsPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
