@@ -18,21 +18,24 @@ export default function AuthPage() {
     name: '',
   });
   const [error, setError] = useState('');
-  const [userName, setUserName] = useState<string | null>(null); // Added state to store the user's name after Google login
+  const [userName, setUserName] = useState(''); // State to hold the user's name after login
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: async (response) => {
       try {
-        // Fetch user info from Google after successful login
+        // Fetch user profile information using the access_token
         const userInfo = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
           headers: { Authorization: `Bearer ${response.access_token}` },
         });
         const userData = await userInfo.json();
-        
-        // Set the user name in state
-        setUserName(userData.name); // Store user's name after login
 
-        console.log('Google login success:', response);
+        console.log("User Data:", userData); // This should contain the user's name and other profile info
+
+        // Set the user's name to display it in the UI
+        setUserName(userData.name);
+        setFormData({ ...formData, name: userData.name });
+
+        // Optionally navigate to another route
         navigate('/');
       } catch (err) {
         setError('Failed to authenticate with Google. Please try again.');
@@ -48,6 +51,7 @@ export default function AuthPage() {
     setError('');
 
     try {
+      // Here you would typically make an API call to your backend
       console.log('Form submission:', formData);
       navigate('/');
     } catch (err) {
@@ -149,18 +153,25 @@ export default function AuthPage() {
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => handleGoogleLogin()}
-            className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
-          >
-            <img
-              src="https://www.google.com/favicon.ico"
-              alt="Google"
-              className="h-5 w-5 mr-2"
-            />
-            {userName ? `Welcome, ${userName}` : 'Continue with Google'} {/* Display user's name if logged in */}
-          </button>
+          {/* If userName exists, show it instead of the Google login button */}
+          {userName ? (
+            <div className="w-full flex justify-center items-center text-gray-700 text-sm">
+              Hello, {userName}
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => handleGoogleLogin()}
+              className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+            >
+              <img
+                src="https://www.google.com/favicon.ico"
+                alt="Google"
+                className="h-5 w-5 mr-2"
+              />
+              Continue with Google
+            </button>
+          )}
 
           <div className="text-center">
             <button
