@@ -1,5 +1,4 @@
 
-  // Set the react version
   settings: { react: { version: '18.3' } },
   plugins: {
     // Add the react plugin
