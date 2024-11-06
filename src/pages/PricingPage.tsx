@@ -46,29 +46,23 @@ export default function PricingPage() {
     // Initialize the Particle Wallet
     walletEntryPlugin.init(
       {
-        projectId: process.env.REACT_APP_PROJECT_ID!,
-        clientKey: process.env.REACT_APP_CLIENT_KEY!,
-        appId: process.env.REACT_APP_APP_ID!,
+        projectId: import.meta.env.VITE_PROJECT_ID!,
+        clientKey: import.meta.env.VITE_CLIENT_KEY!,
+        appId: import.meta.env.VITE_APP_ID!,
       },
       {
         entryPosition: EntryPosition.BR, // Bottom Right
-        visible: true,
+        visible: true, // Ensures the wallet icon is visible
         preload: true,
         themeType: 'light', // Optional: 'light' or 'dark'
       }
     );
-
-    // Set wallet provider (add this if you have a provider setup)
-    // walletEntryPlugin.setWalletCore({
-    //   ethereum: window.ethereum, // For Ethereum
-    //   // Or for Solana
-    //   // solana: window.phantom.solana,
-    // });
   }, []);
 
   // Function to open wallet
   const connectWallet = () => {
-    walletEntryPlugin.walletEntryCreate();
+    walletEntryPlugin.walletEntryCreate(); // Opens the wallet
+    walletEntryPlugin.setVisible(true);    // Ensures the wallet is visible
   };
 
   return (
