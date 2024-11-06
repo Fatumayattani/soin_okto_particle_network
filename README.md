@@ -1,6 +1,4 @@
 
-    react,
-  },
   rules: {
     // other rules...
     // Enable its recommended rules
