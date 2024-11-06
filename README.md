@@ -1,5 +1,4 @@
 
-  rules: {
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
