@@ -1,6 +1,4 @@
 
-
-export default tseslint.config({
   // Set the react version
   settings: { react: { version: '18.3' } },
   plugins: {
