@@ -1,5 +1,4 @@
 
-    // Add the react plugin
     react,
   },
   rules: {
