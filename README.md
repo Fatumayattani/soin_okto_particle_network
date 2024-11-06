@@ -1,5 +1,4 @@
 
-  plugins: {
     // Add the react plugin
     react,
   },
