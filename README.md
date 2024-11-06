@@ -1,7 +1,4 @@
 
-
-```js
-// eslint.config.js
 import react from 'eslint-plugin-react'
 
 export default tseslint.config({
