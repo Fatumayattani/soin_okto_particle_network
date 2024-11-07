@@ -35,7 +35,8 @@ export default function AuthPage() {
           picture: userData.picture,
         });
 
-        navigate('/');
+        // Redirect to the Pricing page after successful login
+        navigate('/pricing');
       } catch (err) {
         setError('Failed to authenticate with Google. Please try again.');
       }
@@ -59,7 +60,9 @@ export default function AuthPage() {
         name: formData.name || 'User',
         email: formData.email,
       });
-      navigate('/');
+
+      // Redirect to the Pricing page after successful sign-in/sign-up
+      navigate('/pricing');
     } catch (err) {
       setError('Authentication failed. Please check your credentials.');
     }
@@ -197,23 +200,24 @@ export default function AuthPage() {
           >
             <img
               src="https://www.google.com/favicon.ico"
-              alt="Google"
+              alt="Google logo"
               className="h-5 w-5 mr-2"
             />
-            Continue with Google
+            Google Sign In
           </button>
 
-          <div className="text-center">
+          <p className="text-center text-sm text-gray-500">
+            {isSignUp
+              ? 'Already have an account?'
+              : "Don't have an account?"}{' '}
             <button
               type="button"
               onClick={() => setIsSignUp(!isSignUp)}
-              className="text-sm text-pink-600 hover:text-pink-500"
+              className="font-medium text-pink-600 hover:text-pink-700"
             >
-              {isSignUp
-                ? 'Already have an account? Sign in'
-                : "Don't have an account? Sign up"}
+              {isSignUp ? 'Sign In' : 'Sign Up'}
             </button>
-          </div>
+          </p>
         </form>
       </div>
     </div>
