@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
 import { Mail, Lock, User, ArrowRight, LogOut } from 'lucide-react';
 import { useUser } from '../context/UserContext';
-import { useOktoLogin } from 'okto-sdk-react'; // Import Okto SDK hooks
 
 interface AuthFormData {
   email: string;
@@ -22,7 +21,6 @@ export default function AuthPage() {
   });
   const [error, setError] = useState('');
 
-  // Google OAuth login handler
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: async (response) => {
       try {
@@ -48,21 +46,6 @@ export default function AuthPage() {
     },
   });
 
-  // Okto login handler
-  const { login, isLoading } = useOktoLogin({
-    onSuccess: (userInfo) => {
-      setUser({
-        name: userInfo?.name || 'User',
-        email: userInfo?.email || 'user@example.com',
-        picture: userInfo?.profile_picture || '',
-      });
-      navigate('/pricing');
-    },
-    onError: () => {
-      setError('Failed to authenticate with Okto. Please try again.');
-    },
-  });
-
   const handleLogout = () => {
     setUser(null);
   };
@@ -72,7 +55,7 @@ export default function AuthPage() {
     setError('');
 
     try {
-      // Handle custom form-based sign-in or sign-up logic
+      // Here you would typically make an API call to your backend
       setUser({
         name: formData.name || 'User',
         email: formData.email,
@@ -210,7 +193,6 @@ export default function AuthPage() {
             </div>
           </div>
 
-          {/* Google Sign-in */}
           <button
             type="button"
             onClick={() => handleGoogleLogin()}
@@ -224,22 +206,14 @@ export default function AuthPage() {
             Google Sign In
           </button>
 
-          {/* Okto Sign-in */}
-          <button
-            type="button"
-            onClick={login}
-            className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
-          >
-            Okto Sign In
-          </button>
-
           <p className="text-center text-sm text-gray-500">
             {isSignUp
               ? 'Already have an account?'
-              : 'Don’t have an account?'}
+              : "Don't have an account?"}{' '}
             <button
+              type="button"
               onClick={() => setIsSignUp(!isSignUp)}
-              className="text-pink-600 hover:text-pink-700 ml-1"
+              className="font-medium text-pink-600 hover:text-pink-700"
             >
               {isSignUp ? 'Sign In' : 'Sign Up'}
             </button>
