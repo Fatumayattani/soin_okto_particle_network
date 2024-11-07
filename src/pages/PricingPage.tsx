@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { Check, Wallet } from 'lucide-react';
 import { walletEntryPlugin, EntryPosition } from '@particle-network/wallet';
 
 export default function PricingPage() {
+  const [walletConnected, setWalletConnected] = useState(false);
+
   const plans = [
     {
       name: 'Basic',
@@ -42,26 +44,26 @@ export default function PricingPage() {
     },
   ];
 
-  useEffect(() => {
-    // Initialize the Particle Wallet once on component mount
-    walletEntryPlugin.init(
-      {
-        projectId: import.meta.env.VITE_PROJECT_ID!,
-        clientKey: import.meta.env.VITE_CLIENT_KEY!,
-        appId: import.meta.env.VITE_APP_ID!,
-      },
-      {
-        entryPosition: EntryPosition.BR, // Bottom Right
-        visible: true, // Wallet icon visibility
-        preload: true,
-        themeType: 'light', // Optional: 'light' or 'dark'
-      }
-    );
-  }, []);
-
-  // Function to open the Particle wallet
+  // Function to initialize and open the Particle wallet
   const connectWallet = () => {
+    if (!walletConnected) {
+      walletEntryPlugin.init(
+        {
+          projectId: import.meta.env.VITE_PROJECT_ID!,
+          clientKey: import.meta.env.VITE_CLIENT_KEY!,
+          appId: import.meta.env.VITE_APP_ID!,
+        },
+        {
+          entryPosition: EntryPosition.BR, // Bottom Right
+          visible: true, // Wallet icon visibility
+          preload: true,
+          themeType: 'light', // Optional: 'light' or 'dark'
+        }
+      );
+    }
+
     walletEntryPlugin.walletEntryCreate(); // Opens the wallet UI
+    setWalletConnected(true); // Set the wallet as connected
   };
 
   return (
@@ -101,7 +103,7 @@ export default function PricingPage() {
                   className="w-full flex items-center justify-center space-x-2 bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors"
                 >
                   <Wallet className="h-5 w-5" />
-                  <span>Connect Wallet</span>
+                  <span>{walletConnected ? 'Wallet Connected' : 'Connect Wallet'}</span>
                 </button>
               </div>
               <div className="px-8 pb-8">
