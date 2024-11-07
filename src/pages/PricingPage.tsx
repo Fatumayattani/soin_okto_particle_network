@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Check, Wallet } from 'lucide-react';
 import { walletEntryPlugin, EntryPosition } from '@particle-network/wallet';
 
@@ -44,26 +44,33 @@ export default function PricingPage() {
     },
   ];
 
-  // Function to initialize and open the Particle wallet
-  const connectWallet = () => {
-    if (!walletConnected) {
-      walletEntryPlugin.init(
-        {
-          projectId: import.meta.env.VITE_PROJECT_ID!,
-          clientKey: import.meta.env.VITE_CLIENT_KEY!,
-          appId: import.meta.env.VITE_APP_ID!,
-        },
-        {
-          entryPosition: EntryPosition.BR, // Bottom Right
-          visible: true, // Wallet icon visibility
-          preload: true,
-          themeType: 'light', // Optional: 'light' or 'dark'
-        }
-      );
-    }
+  useEffect(() => {
+    // Wallet initialization should only happen once when the component mounts
+    walletEntryPlugin.init(
+      {
+        projectId: import.meta.env.VITE_PROJECT_ID!,
+        clientKey: import.meta.env.VITE_CLIENT_KEY!,
+        appId: import.meta.env.VITE_APP_ID!,
+      },
+      {
+        entryPosition: EntryPosition.BR, // Bottom Right
+        visible: true, // Wallet icon visibility
+        preload: true,
+        themeType: 'light', // Optional: 'light' or 'dark'
+      }
+    );
+  }, []);
 
-    walletEntryPlugin.walletEntryCreate(); // Opens the wallet UI
-    setWalletConnected(true); // Set the wallet as connected
+  const connectWallet = async () => {
+    try {
+      // Open the Particle wallet when the button is clicked
+      await walletEntryPlugin.walletEntryCreate();
+      
+      // Once the wallet is connected, set the wallet connection state to true
+      setWalletConnected(true);
+    } catch (error) {
+      console.error('Error connecting wallet:', error);
+    }
   };
 
   return (
