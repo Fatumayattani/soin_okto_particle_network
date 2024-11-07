@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Heart, Wallet, LogIn } from 'lucide-react';
+import { Menu, X,Wallet, LogIn } from 'lucide-react';
 import { useUser } from '../context/UserContext'; // Import the UserContext
 
 export default function Navbar() {
