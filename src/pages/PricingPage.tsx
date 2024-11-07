@@ -77,7 +77,7 @@ export default function PricingPage() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">
-            Invest in Your Mental Wellness
+            Invest in Your Health and Wellness
           </h1>
           <p className="text-xl text-white max-w-2xl mx-auto">
             Choose the plan that best fits your journey. Connect your wallet to get started.

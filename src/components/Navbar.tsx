@@ -48,7 +48,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             <button className="flex items-center space-x-2 bg-white text-pink-600 px-4 py-2 rounded-lg hover:bg-pink-50 transition-colors">
               <Wallet className="h-4 w-4" />
-              <span>Connect Wallet</span>
+              <span>Get Started</span>
             </button>
             {user ? ( // Check if user is logged in
               <span className="text-pink-600">Welcome, {user.name}</span> // Display user's name
