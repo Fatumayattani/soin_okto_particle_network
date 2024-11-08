@@ -23,7 +23,7 @@ SoinHealth is a women-focused digital healthcare platform designed to empower wo
 ![Okto Sign-up](src/assets/signup.PNG)
 - Users can sign in using their **Okto** credentials to manage their health information securely.
 ![Okto Sign-In](src/assets/signin.PNG)
-- Once logged in, users are greeted with their name and can easily navigate the app.
+- continue with google
   
 ![Okto Continue](src/assets/continuegoogle.PNG)
 
