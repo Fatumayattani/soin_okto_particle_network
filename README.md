@@ -39,7 +39,7 @@ SoinHealth is a women-focused digital healthcare platform designed to empower wo
 - The **Gemini API** is used for the chatbot’s conversational abilities.
 - The AI is designed to answer frequently asked questions, provide information on health topics, and assist in navigating resources.
 
-![AI Chatbot](src/assets/ai-chatbot.png)
+![AI Chatbot](src/assets/chatbott.PNG)
 
 ### 4. **Support Groups**
 - **Support Groups** allow users to connect with others facing similar health challenges.
