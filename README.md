@@ -72,7 +72,7 @@ Icons: Lucide Icon
 ### Prerequisites
 - **Node.js** installed
 - **Google Cloud Console** account for Google OAuth `Client ID`
-- **Okto** account for `Client ID`
+- **Okto** account for `OKTO_CLIENT_API_KEY`
 - **Particle Network** account for `Project ID`, `Client ID`, and `App ID`
 
 ### Steps
