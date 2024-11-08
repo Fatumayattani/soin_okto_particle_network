@@ -28,8 +28,8 @@ Support and Resources: Access to resources and support groups to foster connecti
 ---
 ### Technologies Used
 Frontend: React, TypeScript, CSS
-Icons: Lucide Icon
 Authentication: Google OAuth, Okto SDK
 Integration : Particle Wallet
 AI Chatbot : Google Gemini API
+Icons: Lucide Icon
 
