@@ -46,14 +46,14 @@ SoinHealth is a women-focused digital healthcare platform designed to empower wo
 - Users can join different groups to share experiences, provide support, and receive guidance.
 - Each support group is tailored to specific health conditions, providing a community of people with shared experiences.
 
-![Support Groups](src/assets/support-groups.png)
+![Support Groups](src/assets/support%20groups.PNG)
 
 ### 5. **Community Chat**
 - **Community Chat** enables real-time communication between users.
 - This feature fosters a sense of community, encouraging users to share advice, insights, and connect with others.
 - The chat supports direct messaging, group chats, and moderated forums to ensure safe and productive conversations.
 
-![Community Chat](src/assets/community-chat.png)
+![Community Chat](src/assets/community.PNG)
 
 
 
