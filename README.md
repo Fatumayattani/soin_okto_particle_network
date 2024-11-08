@@ -32,7 +32,7 @@ SoinHealth is a women-focused digital healthcare platform designed to empower wo
 - Users can securely store and manage their health-related financial transactions.
 - With **Particle Wallet**, users can access their wallet directly within the app for easy payments, donations, and financial management.
 
-![Particle Wallet](src/assets/particle-wallet.png)
+![Particle Wallet](src/assets/pricewallet.PNG)
 
 ### 3. **AI Chatbot - Powered by Gemini API**
 - The app includes an **AI Chatbot** to assist users with personalized health information.
