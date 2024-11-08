@@ -74,6 +74,7 @@ Icons: Lucide Icon
 - **Google Cloud Console** account for Google OAuth `Client ID`
 - **Okto** account for `OKTO_CLIENT_API_KEY`
 - **Particle Network** account for `Project ID`, `Client ID`, and `App ID`
+- **Google Gemini** Google AI studio `Gemini_API_KEYS`
 
 ### Steps
 
