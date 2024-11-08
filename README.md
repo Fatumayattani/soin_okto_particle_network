@@ -1,7 +1,7 @@
 # SoinHealth
 
 ---
-SoinHealth is a women-focused digital healthcare platform designed to empower women by providing access to health resources, support groups, and community features in a safe and inclusive environment. This platform also integrates advanced cryptocurrency wallet features and secure user authentication.
+SoinHealth is a digital healthcare platform designed to support women by providing secure user authentication through Okto, ensuring a safe environment for managing their health. The platform offers access to health resources, support groups, and features a Particle Wallet for managing transactions. Additionally, SoinHealth includes an AI-powered chatbot to assist users with health information and queries, enhancing the overall experience.
 
 ![SoinHealth Banner](src/assets/soinpic.PNG)
 
