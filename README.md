@@ -25,3 +25,11 @@ Get Started Button: Offers quick access for new users to sign up and explore the
 Mobile-Responsive Design: Provides a seamless experience on all devices with a collapsible menu for mobile navigation.
 Support and Resources: Access to resources and support groups to foster connection and provide guidance on health-related topics.
 
+---
+### Technologies Used
+Frontend: React, TypeScript, CSS
+Icons: Lucide Icon
+Authentication: Google OAuth, Okto SDK
+Integration : Particle Wallet
+AI Chatbot : Google Gemini API
+
