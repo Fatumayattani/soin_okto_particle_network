@@ -9,8 +9,8 @@ SoinHealth is a women-focused digital healthcare platform designed to empower wo
 ## Table of Contents
 #### 1. Overview
 #### 2. Features
-# 3. Technologies Used
-# 4. Getting Started
+#### 3. Technologies Used
+#### 4. Getting Started
 # 5. Usage Guide
 # 6. Configuration Details
 # 7. Acknowledgements
