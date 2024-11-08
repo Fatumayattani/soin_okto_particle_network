@@ -81,8 +81,8 @@ Icons: Lucide Icon
 1. Clone the repository:
 
    ```bash
-   https://github.com/Fatumayattani/soin_particle_network.git
-   cd soinhealth
+   https://github.com/Fatumayattani/soin_okto_particle_network.git
+   cd soin_okto_particle_network
    ```
 
 2. Install dependencies:
