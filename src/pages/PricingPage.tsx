@@ -8,7 +8,7 @@ export default function PricingPage() {
   const plans = [
     {
       name: 'Basic',
-      price: '0.01 ETH',
+      price: '0.001 ETH',
       description: 'Perfect for getting started',
       features: [
         'Access to Community Forums',
@@ -19,7 +19,7 @@ export default function PricingPage() {
     },
     {
       name: 'Premium',
-      price: '0.05 ETH',
+      price: '0.003 ETH',
       description: 'Most popular choice',
       features: [
         'Everything in Basic',
@@ -31,7 +31,7 @@ export default function PricingPage() {
     },
     {
       name: 'Ultimate',
-      price: '0.1 ETH',
+      price: '0.005 ETH',
       description: 'Complete wellness journey',
       features: [
         'Everything in Premium',

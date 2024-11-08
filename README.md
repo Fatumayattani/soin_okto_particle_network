@@ -16,13 +16,46 @@ SoinHealth is a women-focused digital healthcare platform designed to empower wo
 #### 7. Acknowledgements
 
 ---
-### Features
-- Women-Centric Community: Designed specifically for women’s health, creating a safe space for discussion and support.
-- Secure Authentication: Allows users to sign in using Google OAuth and Okto, ensuring a secure and convenient login experience.
-- User-Friendly Navbar: Easy navigation to key sections like Home, Community, Support Groups, Resources, and Pricing.
-- Personalized Experience: Welcomes returning users with a personalized greeting that displays their username if logged in.
-- Mobile-Responsive Design: Provides a seamless experience on all devices with a collapsible menu for mobile navigation.
-- Support and Resources: Access to resources and support groups to foster connection and provide guidance on health-related topics.
+## Features
+
+### 1. **Okto for Sign-In**
+- **Okto** is used for secure user authentication.
+![Okto Sign-up](src/assets/signup.PNG)
+- Users can sign in using their **Okto** credentials to manage their health information securely.
+![Okto Sign-In](src/assets/signin.PNG)
+- Once logged in, users are greeted with their name and can easily navigate the app.
+  
+![Okto Continue](src/assets/continuegoogle.PNG)
+
+### 2. **Particle Wallet Integration**
+- **Particle Network** is integrated for seamless wallet functionality.
+- Users can securely store and manage their health-related financial transactions.
+- With **Particle Wallet**, users can access their wallet directly within the app for easy payments, donations, and financial management.
+
+![Particle Wallet](src/assets/particle-wallet.png)
+
+### 3. **AI Chatbot - Powered by Gemini API**
+- The app includes an **AI Chatbot** to assist users with personalized health information.
+- The **Gemini API** is used for the chatbot’s conversational abilities.
+- The AI is designed to answer frequently asked questions, provide information on health topics, and assist in navigating resources.
+
+![AI Chatbot](src/assets/ai-chatbot.png)
+
+### 4. **Support Groups**
+- **Support Groups** allow users to connect with others facing similar health challenges.
+- Users can join different groups to share experiences, provide support, and receive guidance.
+- Each support group is tailored to specific health conditions, providing a community of people with shared experiences.
+
+![Support Groups](src/assets/support-groups.png)
+
+### 5. **Community Chat**
+- **Community Chat** enables real-time communication between users.
+- This feature fosters a sense of community, encouraging users to share advice, insights, and connect with others.
+- The chat supports direct messaging, group chats, and moderated forums to ensure safe and productive conversations.
+
+![Community Chat](src/assets/community-chat.png)
+
+
 
 ---
 ### Technologies Used
