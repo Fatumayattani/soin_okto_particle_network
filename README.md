@@ -1,7 +1,7 @@
 # SoinHealth
 
 ---
-SoinHealth is a digital healthcare platform designed to support women by providing secure user authentication through Okto, ensuring a safe environment for managing their health. The platform offers access to health resources, support groups, and features a Particle Wallet for managing transactions. Additionally, SoinHealth includes an AI-powered chatbot to assist users with health information and queries, enhancing the overall experience.
+SoinHealth is a women-focused digital healthcare platform built to empower women by providing a secure, inclusive space to manage health information, connect with support groups, and access resources tailored to their well-being. The platform is designed to meet women’s unique health needs, offering access to mental health support, community discussions, and resources on various health topics. By fostering a supportive online environment, SoinHealth enables women to make informed decisions, share experiences, and engage with health-focused communities, all within a secure and user-friendly interface.
 
 ![SoinHealth Banner](src/assets/soinpicture.PNG)
 
