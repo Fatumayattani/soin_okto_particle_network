@@ -17,8 +17,8 @@ SoinHealth is a women-focused digital healthcare platform designed to empower wo
 
 ---
 ### Features
-Women-Centric Community: Designed specifically for women’s health, creating a safe space for discussion and support.
-Secure Authentication: Allows users to sign in using Google OAuth and Okto, ensuring a secure and convenient login experience.
+- Women-Centric Community: Designed specifically for women’s health, creating a safe space for discussion and support.
+- Secure Authentication: Allows users to sign in using Google OAuth and Okto, ensuring a secure and convenient login experience.
 User-Friendly Navbar: Easy navigation to key sections like Home, Community, Support Groups, Resources, and Pricing.
 Personalized Experience: Welcomes returning users with a personalized greeting that displays their username if logged in.
 Get Started Button: Offers quick access for new users to sign up and explore the platform.
